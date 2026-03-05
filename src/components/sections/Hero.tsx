@@ -35,7 +35,7 @@ export function Hero() {
                 className="max-w-4xl mx-auto flex flex-col items-center"
             >
                 <Badge variant="outline" className="mb-4 rounded-full border-white/10 bg-white/5 py-1.5 px-4 text-sm font-medium backdrop-blur-sm text-gray-300">
-                    Over 200+ Brands Trusts Us
+                    Empowering UAE Digital Commerce
                 </Badge>
 
                 <h1 className="text-5xl leading-[56px] font-semibold tracking-tight text-title mb-6">
