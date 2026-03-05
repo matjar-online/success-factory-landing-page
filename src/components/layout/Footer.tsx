@@ -78,7 +78,7 @@ export function Footer() {
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
                                     className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white whitespace-nowrap"
                                 >
-                                    Try Now
+                                    Explore Now
                                 </motion.span>
                             )}
                         </AnimatePresence>
@@ -116,11 +116,11 @@ export function Footer() {
                     <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12 mb-4 md:mb-0">
                         <div className="flex items-center gap-2">
                             <Phone className="w-4 h-4" />
-                            <span>932 - 230 - 450</span>
+                            <span>+971 58 599 5038</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail className="w-4 h-4" />
-                            <span>yourmail@example.com</span>
+                            <span>help@successfactory.ae</span>
                         </div>
                     </div>
                     <p>©2026, Success Factory. All Rights Reserved</p>

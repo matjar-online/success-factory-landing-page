@@ -41,11 +41,11 @@ export function Verticals() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-2xl md:text-section-title text-title mb-4">Platform & Success Suite</h2>
+                    <h2 className="text-[40px] leading-[48px] tracking-normal font-semibold text-title mb-2">Platform & Success Suite</h2>
                     <p className="text-section-subtitle text-subtitle">API-first marketplace engine, embedded payments and operational tooling for national-scale commerce</p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
                     {verticals.map((vertical, i) => (
                         <motion.div
                             key={vertical.title}

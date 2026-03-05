@@ -16,9 +16,9 @@ const solutions = [
         icon: ShoppingCart,
     },
     {
-        title: "SuccessPay",
-        description: "An embedded, PSP-agnostic payment layer providing routing, 3DS2, split/commission logic and reconciliation.",
-        icon: CreditCard,
+        title: "Edge Tech & AI",
+        description: "AI agents, data pipelines, and AI tools for risk, fraud, and compliance. AI agents, data pipelines, and AI tools for risk, fraud, and compliance.",
+        icon: Cpu,
     },
     {
         title: "Operations & Risk",
@@ -68,7 +68,7 @@ export function CoreSolutions() {
                         <motion.div key={index} variants={itemVariants} className="h-full">
                             <Card className="h-full bg-[#FFFFFF]/[0.02] border-none rounded-2xl shadow-none transition-all duration-300 hover:shadow-md">
                                 <CardHeader className="pb-2">
-                                    <solution.icon className="w-8 h-8 text-[#045AD8] fill-white stroke-[1.5] mb-4" />
+                                    <solution.icon className="w-10 h-10 text-[#045AD8] stroke-[1.5] mb-4" />
                                     <CardTitle className="text-white text-lg font-bold">{solution.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
