@@ -35,8 +35,8 @@ export function Navbar() {
                     <Link href="#markets" onClick={handleScroll} className="text-sm font-medium text-foreground hover:text-white transition-colors">
                         Markets
                     </Link>
-                    <Link href="#platforms" onClick={handleScroll} className="text-sm font-medium text-foreground hover:text-white transition-colors">
-                        Platforms
+                    <Link href="#contact" onClick={handleScroll} className="text-sm font-medium text-foreground hover:text-white transition-colors">
+                        Contact
                     </Link>
                 </nav>
                 <div className="flex items-center gap-4">
