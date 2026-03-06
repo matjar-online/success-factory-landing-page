@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Facebook, Youtube, Linkedin, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 import footerLogo from "@/assets/images/logo-footer.png";
 
 const socialLinks = [
@@ -22,20 +23,21 @@ const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
-const navLinks = [
-    { label: "About us", href: "#about" },
-    { label: "Jobs", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Press", href: "#" },
-    { label: "FAQ", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#contact" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms & condition", href: "#" },
-];
-
 export function Footer() {
     const [isLogoHovered, setIsLogoHovered] = useState(false);
+    const { t } = useLanguage();
+
+    const navLinks = [
+        { label: t.footer.aboutUs, href: "#about" },
+        { label: t.footer.jobs, href: "#" },
+        { label: t.footer.blog, href: "#" },
+        { label: t.footer.press, href: "#" },
+        { label: t.footer.faq, href: "#" },
+        { label: t.footer.careers, href: "#" },
+        { label: t.footer.contactLink, href: "#contact" },
+        { label: t.footer.privacyPolicy, href: "#" },
+        { label: t.footer.terms, href: "#" },
+    ];
 
     return (
         <footer className="w-full bg-background relative overflow-hidden pt-24 pb-10">
@@ -78,13 +80,13 @@ export function Footer() {
                                     transition={{ duration: 0.2, ease: "easeInOut" }}
                                     className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white whitespace-nowrap"
                                 >
-                                    Explore Now
+                                    {t.footer.exploreNow}
                                 </motion.span>
                             )}
                         </AnimatePresence>
                     </Link>
                     <p className="text-subtitle text-card-subtitle max-w-md">
-                        UAE&apos;s leading commerce infrastructure for specialized markets and large-scale events.
+                        {t.footer.description}
                     </p>
 
                     {/* Social Icons */}
@@ -123,7 +125,7 @@ export function Footer() {
                             <span>help@successfactory.ae</span>
                         </div>
                     </div>
-                    <p>©2026, Success Factory. All Rights Reserved</p>
+                    <p>{t.footer.copyright}</p>
                 </div>
             </div>
         </footer>

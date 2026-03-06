@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import bgImage from "@/assets/images/stats-background.png";
-
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
+import { useLanguage } from "@/lib/language-context";
 
 function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: number; duration?: number; suffix?: string }) {
     const [count, setCount] = useState(from);
@@ -23,7 +23,6 @@ function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: nu
             const progress = (timestamp - startTime) / (duration * 1000);
 
             if (progress < 1) {
-                // Easing function for smooth deceleration
                 const easeOutQuart = 1 - Math.pow(1 - progress, 4);
                 const currentCount = from + (to - from) * easeOutQuart;
                 setCount(Math.round(currentCount));
@@ -46,6 +45,8 @@ function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: nu
 }
 
 export function Stats() {
+    const { t } = useLanguage();
+
     return (
         <section className="py-24 px-4 w-full">
             <div className="max-w-6xl mx-auto">
@@ -73,19 +74,19 @@ export function Stats() {
                         {/* Stat 1 */}
                         <div className="flex-1 flex flex-col items-center justify-center text-center py-8 md:py-0 px-4 group">
                             <Counter from={0} to={10} suffix="x" />
-                            <span className="text-section-subtitle text-subtitle">Faster merchant onboarding</span>
+                            <span className="text-section-subtitle text-subtitle">{t.stats.stat1}</span>
                         </div>
 
                         {/* Stat 2 */}
                         <div className="flex-1 flex flex-col items-center justify-center text-center py-8 md:py-0 px-4 group">
                             <Counter from={0} to={99} suffix="%" />
-                            <span className="text-section-subtitle text-subtitle">Lower manual reconciliation</span>
+                            <span className="text-section-subtitle text-subtitle">{t.stats.stat2}</span>
                         </div>
 
                         {/* Stat 3 */}
                         <div className="flex-1 flex flex-col items-center justify-center text-center py-8 md:py-0 px-4 group">
                             <Counter from={100} to={0} suffix="%" duration={1.5} />
-                            <span className="text-section-subtitle text-subtitle">Revenue leakage from cash</span>
+                            <span className="text-section-subtitle text-subtitle">{t.stats.stat3}</span>
                         </div>
 
                     </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import { useLanguage } from "@/lib/language-context";
 import heroBackgroundImage from "@/assets/images/hero-background.png";
 import heroImage1 from "@/assets/images/hero-image-1.png";
 import heroImage2 from "@/assets/images/hero-image-2.png";
@@ -10,8 +11,8 @@ import heroImage3 from "@/assets/images/hero-image-3.png";
 import heroImage4 from "@/assets/images/hero-image-4.png";
 
 export function Hero() {
-    // The navbar is absolute and h-16 (64px) with py-4 (32px) = 96px total height taken.
-    // 125px below the navbar means 96 + 125 = 221px from the top.
+    const { t } = useLanguage();
+
     return (
         <section className="relative pt-28 md:pt-[221px] lg:pt-[221px] overflow-hidden flex flex-col items-center text-center px-4">
             {/* Hero Background Image */}
@@ -35,17 +36,16 @@ export function Hero() {
                 className="max-w-4xl mx-auto flex flex-col items-center"
             >
                 <Badge variant="outline" className="mb-4 rounded-full border-white/10 bg-white/5 py-1.5 px-4 text-sm font-medium backdrop-blur-sm text-gray-300">
-                    Empowering UAE Digital Commerce
+                    {t.hero.badge}
                 </Badge>
 
                 <h1 className="text-5xl leading-[56px] font-semibold tracking-tight text-title mb-6">
-                    Building commerce <br className="hidden md:block" />
-                    infrastructure for UAE markets.
+                    {t.hero.titleLine1} <br className="hidden md:block" />
+                    {t.hero.titleLine2}
                 </h1>
 
                 <p className="text-lg font-normal text-white max-w-2xl">
-                    An Emirati venture builder creating payment-ready, compliance-first commerce
-                    platforms for national and vertical markets.
+                    {t.hero.subtitle}
                 </p>
             </motion.div>
 

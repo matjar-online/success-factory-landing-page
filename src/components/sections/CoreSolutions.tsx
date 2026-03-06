@@ -2,30 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, ShoppingCart, CreditCard, ShieldCheck, Truck, Cpu } from "lucide-react";
-
-const solutions = [
-    {
-        title: "Venture building",
-        description: "Creating, funding and operating structured commerce ventures — not just selling software, but launching businesses that run and scale.",
-        icon: Building2,
-    },
-    {
-        title: "Commerce platform",
-        description: "A configurable, API-first marketplace engine for listings, booking, vertical workflows and customer-facing web/mobile experiences.",
-        icon: ShoppingCart,
-    },
-    {
-        title: "Edge Tech & AI",
-        description: "AI agents, data pipelines, and AI tools for risk, fraud, and compliance. AI agents, data pipelines, and AI tools for risk, fraud, and compliance.",
-        icon: Cpu,
-    },
-    {
-        title: "Operations & Risk",
-        description: "Merchant onboarding and KYC, operational monitoring, transaction-level evidence, chargeback defense, segmentation and dashboards.",
-        icon: ShieldCheck,
-    }
-];
+import { Building2, ShoppingCart, ShieldCheck, Cpu } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,6 +21,31 @@ const itemVariants = {
 };
 
 export function CoreSolutions() {
+    const { t } = useLanguage();
+
+    const solutions = [
+        {
+            title: t.solutions.ventureBuilding,
+            description: t.solutions.ventureBuildingDesc,
+            icon: Building2,
+        },
+        {
+            title: t.solutions.commercePlatform,
+            description: t.solutions.commercePlatformDesc,
+            icon: ShoppingCart,
+        },
+        {
+            title: t.solutions.edgeTechAI,
+            description: t.solutions.edgeTechAIDesc,
+            icon: Cpu,
+        },
+        {
+            title: t.solutions.operationsRisk,
+            description: t.solutions.operationsRiskDesc,
+            icon: ShieldCheck,
+        }
+    ];
+
     return (
         <section id="solutions" className="py-24 px-4">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
@@ -53,8 +56,8 @@ export function CoreSolutions() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-title mb-4" style={{ fontWeight: 600, fontSize: '40px', lineHeight: '48px', letterSpacing: '0px' }}>Core Solutions</h2>
-                    <p className="text-section-subtitle text-subtitle">Venture building, commerce platform, SuccessPay and operations & risk.</p>
+                    <h2 className="text-title mb-4" style={{ fontWeight: 600, fontSize: '40px', lineHeight: '48px', letterSpacing: '0px' }}>{t.solutions.title}</h2>
+                    <p className="text-section-subtitle text-subtitle">{t.solutions.subtitle}</p>
                 </motion.div>
 
                 <motion.div

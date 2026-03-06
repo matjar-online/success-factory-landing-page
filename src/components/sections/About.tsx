@@ -2,8 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
 
 export function About() {
+    const { t } = useLanguage();
     const titleRef = useRef<HTMLHeadingElement>(null);
     const isInView = useInView(titleRef, { once: false, margin: "-100px" });
 
@@ -19,7 +21,7 @@ export function About() {
                     className="md:w-1/4"
                 >
                     <h2 className="text-section-subtitle text-subtitle sticky top-32">
-                        About us
+                        {t.about.sectionTitle}
                     </h2>
                 </motion.div>
 
@@ -36,28 +38,16 @@ export function About() {
                         className={`text-2xl md:text-about-title text-title transition-all duration-500 ${isInView ? "font-semibold" : "font-normal"
                             }`}
                     >
-                        We build world-class commerce platforms for UAE markets and events.
+                        {t.about.heading}
                     </h3>
 
                     <div className="flex flex-col gap-6 text-section-subtitle text-subtitle">
                         <p>
-                            <strong className="text-title font-semibold">We&apos;re a tight-knit Emirati</strong> venture builder that creates, funds
-                            and operates payment-ready commerce ventures.
+                            <strong className="text-title font-semibold">{t.about.p1Bold}</strong>
+                            {t.about.p1Text}
                         </p>
-                        <p>
-                            We combine product, payments and operations so markets,
-                            festivals and high-value occasions can run on secure, reconciled
-                            rails — from merchant onboarding to payout.
-                        </p>
-                        <p>
-                            We bring practical, operator DNA to national scale: we design
-                            marketplace logic, embed SuccessPay for PSP-agnostic routing
-                            and split payments, and run the operational systems that keep
-                            commerce flowing. Our deployments are purpose-built for
-                            heritage events, artisan markets, jewelry rental and other
-                            verticals where trust, compliance and high-value flows matter
-                            most.
-                        </p>
+                        <p>{t.about.p2}</p>
+                        <p>{t.about.p3}</p>
                     </div>
                 </motion.div>
             </div>
